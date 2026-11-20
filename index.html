@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loh Kok Hao — Software Engineering Student</title>
+  <meta name="description" content="Portfolio of Loh Kok Hao, IT student at Singapore Polytechnic. Full-stack web, CI/CD and security projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a href="#top" class="nav__logo">kh<span>.</span></a>
+    <nav class="nav__links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">◐</button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="mono hero__tag">// Year 2 · Diploma in IT · Singapore Polytechnic</p>
+      <h1 class="hero__title">
+        Hi, I'm Kok Hao.<br />
+        I build <em id="typed">full-stack apps</em><span class="caret">|</span>
+      </h1>
+      <p class="hero__lead">
+        I ship web apps end to end, from database schema to CI/CD pipeline. Right now I'm looking for a
+        <strong>software engineering internship</strong>.
+      </p>
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--solid">See my work</a>
+        <a href="resume.pdf" class="btn btn--ghost" target="_blank" rel="noopener">Download resume</a>
+      </div>
+      <dl class="stats">
+        <div><dt>3.72</dt><dd>Cumulative GPA</dd></div>
+        <div><dt>4.00</dt><dd>Last two semesters</dd></div>
+        <div><dt>10+</dt><dd>Features shipped on GitMart</dd></div>
+      </dl>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2 class="section__title"><span class="mono">01</span> Projects</h2>
+
+      <article class="project reveal">
+        <div class="project__meta mono">Full-stack · CI/CD · AWS</div>
+        <h3>GitMart — Marketplace Web App</h3>
+        <p>
+          A marketplace I built with my team and deployed on AWS EC2 behind a Caddy HTTPS reverse proxy.
+          I built most of the user-facing features and the release pipeline.
+        </p>
+        <ul class="project__points">
+          <li>Real-time notifications using Server-Sent Events, saved to PostgreSQL before being pushed over SSE and email</li>
+          <li>Three-stage GitHub Actions pipeline: ESLint, Jest with a Postgres service container, njsscan, Docker, SSH deploy, automatic rollback</li>
+          <li>JWT auth with refresh-token rotation, reviews and ratings, wishlist, reservations, compare tool, URL-synced filters</li>
+        </ul>
+        <div class="chips">
+          <span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Docker</span><span>GitHub Actions</span><span>AWS EC2</span>
+        </div>
+        <div class="project__links">
+          <a href="https://github.com/kok-hao" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project__meta mono">Software architecture · Group of 4</div>
+        <h3>Food Delivery Order Management System</h3>
+        <p>
+          A microservices design with an API gateway, a token-based auth service, six business services and an
+          async message queue for notifications and audit logs.
+        </p>
+        <ul class="project__points">
+          <li>State pattern so illegal order transitions are impossible by construction</li>
+          <li>Repository pattern to keep data access separate from business logic</li>
+          <li>Component and activity diagrams, plus a requirements traceability matrix</li>
+        </ul>
+        <div class="chips">
+          <span>Microservices</span><span>Design patterns</span><span>UML</span>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project__meta mono">Security · Kali Linux</div>
+        <h3>Ethical Hacking Assessment</h3>
+        <p>
+          Enumerated a target server, found a hidden nginx service on a non-standard port and retrieved flags
+          using SQL injection and CSRF. I also co-wrote the group's report on network protocols and OS vulnerabilities.
+        </p>
+        <div class="chips">
+          <span>Nmap</span><span>OpenVAS</span><span>Wireshark</span><span>John the Ripper</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2 class="section__title"><span class="mono">02</span> Experience</h2>
+      <div class="timeline">
+        <div class="timeline__item reveal">
+          <p class="mono timeline__date">Present</p>
+          <h3>Coding Tutor (Part-time) · The Brainery Code</h3>
+          <p>I teach programming fundamentals and break concepts into step-by-step lessons that fit each student's pace.</p>
+        </div>
+        <div class="timeline__item reveal">
+          <p class="mono timeline__date">Present</p>
+          <h3>Member · SP Navigators (CCA)</h3>
+          <p>Singapore Polytechnic.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2 class="section__title"><span class="mono">03</span> Skills</h2>
+      <div class="skills">
+        <div class="reveal"><h4 class="mono">Languages</h4><p>JavaScript, SQL, HTML, CSS</p></div>
+        <div class="reveal"><h4 class="mono">Backend</h4><p>Node.js, Express, PostgreSQL, REST, JWT, SSE</p></div>
+        <div class="reveal"><h4 class="mono">DevOps</h4><p>GitHub Actions, Docker, AWS EC2, Caddy, Jest, ESLint</p></div>
+        <div class="reveal"><h4 class="mono">Security</h4><p>Kali Linux, Nmap, OpenVAS, Wireshark</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2 class="contact__title">Let's talk.</h2>
+      <p>I'm open to internship opportunities. The fastest way to reach me is email.</p>
+      <div class="contact__row">
+        <button class="btn btn--solid" id="copyEmail" data-email="kokloh026@gmail.com">Copy email</button>
+        <a class="btn btn--ghost" href="https://github.com/kok-hao" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/kokhao/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="mono toast" id="toast" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer mono">© <span id="year"></span> Loh Kok Hao · Built by hand in HTML, CSS & JS</footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
